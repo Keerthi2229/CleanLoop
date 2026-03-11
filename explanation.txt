@@ -1,0 +1,48 @@
+Project Structure Explanation - CleanLoop
+
+Root Directory:
+- .env: Contains environment variables like Supabase URL and API keys. Used for local development and sensitive configuration.
+- .gitignore: Lists files and directories that should not be tracked by Git (e.g., node_modules, .env).
+- .vscode/: Configuration for Visual Studio Code, like recommended extensions or project-specific settings.
+- README.md: The main documentation for the project, explaining features, tech stack, and how to run it.
+- eslint.config.js: Configuration file for ESLint, used for maintaining code quality and consistent formatting.
+- index.html: The entry point HTML file for the application. Vite injects the React app here.
+- node_modules/: Contains all the installed dependencies (libraries) required for the project.
+- package.json: Lists project dependencies, scripts (dev, build, lint), and metadata.
+- package-lock.json: Locks the versions of installed dependencies to ensure consistent builds across environments.
+- postcss.config.js: Configuration for PostCSS, used by Tailwind CSS for processing styles.
+- public/: Contains static assets that are served directly (e.g., icons, images that don't need bundling).
+- src/: The main source code folder of the application.
+- tailwind.config.js: Custom configuration for Tailwind CSS, defining themes, colors, and animations.
+- tsconfig.json / tsconfig.app.json / tsconfig.node.json: TypeScript configuration files defining how the code should be compiled.
+- vite.config.ts: Configuration for the Vite build tool, including plugins like the React plugin.
+
+src Directory:
+- App.tsx: The root React component. It handles routing and the main application state (like user authentication).
+- index.css: Global styles, including Tailwind CSS directives and custom animations.
+- main.tsx: The entry point for the React application. It renders the App component into the DOM.
+- vite-env.d.ts: TypeScript definitions for Vite-specific environment variables.
+
+src/components/:
+- AdminDashboard.tsx: UI for administrators to manage users and monitor waste collection requests.
+- BookingPage.tsx: The page where users can schedule a new waste collection.
+- BookingStatus.tsx: Displays the status of a user's past and current bookings.
+- Home.tsx: The landing page of the application, introducing the service.
+- Login.tsx: The user authentication login page.
+- Signup.tsx: The user registration page.
+- Navbar.tsx: The navigation bar component used across all pages.
+
+src/constants/:
+- waste.ts: Contains static data related to waste types, categories, and descriptions.
+
+src/lib/:
+- supabase.ts: Initializes and exports the Supabase client used for database and auth interaction.
+
+src/services/:
+- supabaseService.ts: Contains functions for interacting with the Supabase database (e.g., fetching bookings, updating status).
+
+src/types/:
+- index.ts: Defines TypeScript interfaces and types used throughout the project (e.g., User, Booking).
+
+src/utils/:
+- (Directory) Currently empty. Intended for helper/utility functions used across the app.
